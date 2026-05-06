@@ -37,7 +37,7 @@ This is a full business engine for travel agencies.
 ![Bookings](assets/images/booking.png)
 
 🌐 Session Launcher  
-![Sessions](assets/images/sessions_tracker.png)
+![Sessions](assets/images/account.png)
 
 💳 Payments  
 ![Payments](assets/images/payments.png)
