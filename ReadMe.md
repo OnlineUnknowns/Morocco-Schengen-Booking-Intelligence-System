@@ -93,6 +93,61 @@ This system is built to sell.
 </p>
 
 ---
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:00f7ff&height=120&section=header"/>
+</p>
+
+## 🧠 System Intelligence Layer
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=22&duration=2000&color=00F7FF&center=true&vCenter=true&width=700&lines=BLS+%7C+VFS+Appointment+System;Smart+Booking+Automation+Engine;Scalable+Travel+Agency+SaaS;Built+for+Real+Production+Use" />
+</p>
+
+---
+
+## 🧩 Supported Systems
+
+<p align="center">
+  <img src="https://img.shields.io/badge/BLS-International-00f7ff?style=for-the-badge&logo=visa" />
+  <img src="https://img.shields.io/badge/VFS-Global-8b5cf6?style=for-the-badge&logo=internetexplorer" />
+  <img src="https://img.shields.io/badge/Embassy-Systems-22c55e?style=for-the-badge&logo=globe" />
+</p>
+
+---
+
+## 🛠️ Tech Stack Animation View
+
+### ⚡ Frontend
+<p>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/Tailwind-38bdf8?style=for-the-badge&logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript" />
+</p>
+
+### 🔥 Backend
+<p>
+  <img src="https://img.shields.io/badge/NestJS-e0234e?style=for-the-badge&logo=nestjs" />
+  <img src="https://img.shields.io/badge/Node.js-22c55e?style=for-the-badge&logo=node.js" />
+  <img src="https://img.shields.io/badge/REST_API-0ea5e9?style=for-the-badge" />
+</p>
+
+### 🗄️ Database & Infra
+<p>
+  <img src="https://img.shields.io/badge/MySQL-00758f?style=for-the-badge&logo=mysql" />
+  <img src="https://img.shields.io/badge/Prisma-2d3748?style=for-the-badge&logo=prisma" />
+  <img src="https://img.shields.io/badge/Redis-dc382d?style=for-the-badge&logo=redis" />
+  <img src="https://img.shields.io/badge/Docker-2496ed?style=for-the-badge&logo=docker" />
+</p>
+
+---
+
+## 🌐 System Architecture Flow
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhisheknaiidu/awesome-github-profile-readme/master/assets/handshake.gif" width="200"/>
+</p>
 
 ⚙️ Installation
 
