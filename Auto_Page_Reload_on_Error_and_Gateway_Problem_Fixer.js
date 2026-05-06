@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Auto_Page_Reload_on_Error_and_Gateway_Problem_Fixer
-// @namespace    http://tampermonkey.net/
+// @namespace    http://blsspainmorocco/
 // @version      0.1
 // @description  try to take over the world!
-// @author       @Itsmaarouf
+// @author       @Unknown
 // @match        *://*.blsspainmorocco.com/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
