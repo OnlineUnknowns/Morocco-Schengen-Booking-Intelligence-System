@@ -100,3 +100,63 @@ This system is built to sell.
 git clone https://github.com/OnlineUnknowns/Morocco-Schengen-Booking-Intelligence-System.git
 cd Morocco-Schengen-Booking-Intelligence-System
 docker-compose up --build
+
+---
+
+🧩 Supported Visa Systems
+
+This platform is designed to support automated and semi-automated appointment booking systems for:
+
+- 🟦 BLS International (Visa Application Centers)
+- 🟪 VFS Global (Visa Processing Centers)
+- 🌍 Other embassy appointment systems (extensible architecture)
+
+The system is built with a modular backend to allow integration with multiple visa providers depending on region and embassy rules.
+
+---
+
+🛠️ Technologies Used
+
+This system is built using modern full-stack technologies:
+
+### Frontend
+- Next.js (React Framework)
+- Tailwind CSS
+- TypeScript
+
+### Backend
+- NestJS (Node.js Framework)
+- REST API Architecture
+- TypeScript
+
+### Database
+- MySQL
+- Prisma ORM
+
+### Infrastructure & DevOps
+- Docker
+- CI/CD Pipelines
+- Redis (Queue & Sessions)
+
+### Architecture
+- Microservices-ready structure
+- Scalable SaaS architecture
+- Modular booking engine
+
+---
+
+🚀 System Overview
+
+This is a complete AI-powered visa booking management system designed for travel agencies.
+
+It enables:
+
+✔ Automated booking workflow management  
+✔ Client tracking and management  
+✔ Appointment scheduling system  
+✔ Multi-provider support (BLS / VFS)  
+✔ Scalable SaaS deployment  
+
+The system is designed to be production-ready and scalable for real-world travel agencies.
+
+---
