@@ -1,0 +1,41 @@
+# Visa Management System Monorepo Structure
+
+```text
+.
+├── apps/
+│   ├── backend/                # NestJS API
+│   │   ├── src/
+│   │   │   ├── common/         # Guards, Filters, Interceptors
+│   │   │   ├── config/         # Env & App Config
+│   │   │   ├── database/       # Prisma Service & Seed
+│   │   │   └── modules/        # Domain Logic
+│   │   │       ├── auth/
+│   │   │       ├── users/
+│   │   │       ├── clients/
+│   │   │       ├── accounts/
+│   │   │       ├── booking-requests/
+│   │   │       ├── sessions/
+│   │   │       ├── notifications/
+│   │   │       ├── payments/
+│   │   │       └── audit-logs/
+│   │   ├── prisma/             # Schema & Migrations
+│   │   └── test/               # E2E Tests
+│   └── frontend/               # Next.js Application
+│       ├── app/                # App Router (Pages)
+│       ├── components/         # Shared Layout Components
+│       ├── features/           # Domain-specific UI Logic
+│       │   ├── clients/
+│       │   ├── bookings/
+│       │   └── sessions/
+│       ├── lib/                # API Client (Axios/Fetch)
+│       ├── hooks/              # Custom React Hooks
+│       └── store/              # State Management (Zustand/Redux)
+├── packages/
+│   ├── ui/                     # Shared Tailwind Components
+│   ├── types/                  # Shared TS Interfaces/Enums
+│   └── utils/                  # Shared Helpers (Validation, Formatting)
+├── infra/
+│   ├── docker-compose.yml
+│   └── nginx/                  # Reverse Proxy Config
+└── docs/                       # API & System Documentation
+```

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6cf8bb",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-variant": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#565e74",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed": "#07006c",
+                    "on-primary-fixed": "#131b2e",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "on-primary-container": "#7c839b",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-container": "#07006c",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "outline-variant": "#c6c6cd",
+                    "on-surface": "#0b1c30",
+                    "outline": "#76777d",
+                    "surface-container": "#e5eeff",
+                    "surface-bright": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#dae2fd",
+                    "inverse-primary": "#bec6e0",
+                    "on-tertiary-container": "#7073ff",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container-high": "#dce9ff",
+                    "secondary": "#006c49",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "tertiary-fixed": "#e1e0ff",
+                    "primary": "#000000",
+                    "inverse-surface": "#213145",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#131b2e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar_width": "260px",
+                    "stack_md": "16px",
+                    "gutter": "24px",
+                    "margin_page": "32px",
+                    "stack_sm": "8px",
+                    "container_max_width": "1440px",
+                    "stack_lg": "24px"
+            },
+            "fontFamily": {
+                    "tabular-nums": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "tabular-nums": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vault-gradient {
+            background: linear-gradient(135deg, #131b2e 0%, #1e293b 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background flex h-screen overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="w-[260px] h-screen sticky left-0 top-0 bg-primary-container dark:bg-primary-container flex flex-col h-full py-gutter px-4 flex-shrink-0">
+<div class="mb-10 px-2">
+<h1 class="font-h2 text-h2 font-bold text-on-primary-fixed dark:text-on-primary-fixed-dim">VisaPro Morocco</h1>
+<p class="font-label-sm text-label-sm text-on-primary-container/60 uppercase tracking-widest mt-1">Admin Terminal</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 transition-colors hover:bg-surface-container-high text-on-primary-container/70 hover:text-on-primary-fixed font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 transition-colors hover:bg-surface-container-high text-on-primary-container/70 hover:text-on-primary-fixed font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span>Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 transition-colors hover:bg-surface-container-high text-on-primary-container/70 hover:text-on-primary-fixed font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 transition-colors text-on-primary-fixed bg-surface-container-highest rounded-lg font-bold font-label-md text-label-md active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">manage_accounts</span>
+<span>Accounts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 transition-colors hover:bg-surface-container-high text-on-primary-container/70 hover:text-on-primary-fixed font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-on-primary-container/10 pt-6 space-y-1">
+<button class="w-full bg-[#0F172A] text-white py-3 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 mb-6 hover:bg-black transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New Booking</span>
+</button>
+<a class="flex items-center gap-3 px-3 py-2 transition-colors hover:bg-surface-container-high text-on-primary-container/70 hover:text-on-primary-fixed font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 transition-colors hover:bg-surface-container-high text-on-primary-container/70 hover:text-on-primary-fixed font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-grow flex flex-col min-w-0 overflow-y-auto">
+<!-- TopNavBar Shell -->
+<header class="h-16 w-full sticky top-0 z-40 bg-surface-container-lowest dark:bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between px-margin_page w-full">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-md font-body-md focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search accounts or credentials..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-all material-symbols-outlined">notifications</button>
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-all material-symbols-outlined">history</button>
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-all material-symbols-outlined">help</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-label-md font-label-md text-on-surface">Admin User</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Systems Overseer</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a middle-aged male administrator in a crisp white shirt and dark blazer, set against a blurred corporate office background. The lighting is soft and directional, emphasizing clarity and institutional trust. The overall aesthetic is clean and modern, matching a corporate dashboard environment with high-end finishes and a focus on professional authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdhV_LgCCbdo2fqyVYc3bmfgtEELwvBPXSaBe8BqEKi9ouN5hoM3fHWmML8IlwCPhyI4zyVhPVhu_0hPNVQlQEuovUs5dNtRqkW_lan3q5razIm6CyZ-R54IWmK_fZIBSSbTd1WS51nk2KWZPYn_RB-a15pbyyS8qSZdtihpWOkA-zJjz_rMa6AXUo0MWjv2OK9mQYDdTvy1-KGhs6i7ht80evF9s_zOWkCpuJaTRlIZrk9JLoOCq_Q_DkZn5TkGL5De9vtTy660"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin_page max-w-container_max_width mx-auto w-full">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface">Credential Vault</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">Manage secure access for external visa processing portals (TLS, BLS, France-Visas).</p>
+</div>
+<button class="bg-[#0F172A] text-white px-6 py-2.5 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-black transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">vpn_key</span>
+<span>New Account</span>
+</button>
+</div>
+<!-- Dashboard Stats Summary (Bento-lite) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Accounts</p>
+<p class="text-h2 font-h2 text-on-surface mt-2">42</p>
+<div class="flex items-center gap-1 text-secondary mt-2">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="text-label-sm font-label-sm">+3 this month</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Active Sessions</p>
+<p class="text-h2 font-h2 text-on-surface mt-2">12</p>
+<div class="flex items-center gap-1 text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span class="text-label-sm font-label-sm">Across 4 regions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Vault Security</p>
+<p class="text-h2 font-h2 text-secondary mt-2">Strong</p>
+<div class="flex items-center gap-1 text-secondary mt-2">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-label-sm font-label-sm">2FA Enabled</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Failed Logins</p>
+<p class="text-h2 font-h2 text-error mt-2">0</p>
+<div class="flex items-center gap-1 text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-[16px]">security</span>
+<span class="text-label-sm font-label-sm">Last 24 hours</span>
+</div>
+</div>
+</div>
+<!-- Main Data Table Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant bg-[#F8FAFC] flex justify-between items-center">
+<div class="flex gap-4">
+<button class="text-label-md font-label-md text-primary border-b-2 border-primary pb-4 -mb-[17px]">All Accounts</button>
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-on-surface pb-4 transition-all">TLScontact</button>
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-on-surface pb-4 transition-all">BLS International</button>
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-on-surface pb-4 transition-all">France-Visas</button>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC]">
+<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant uppercase tracking-wider">Account Name / Email</th>
+<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant uppercase tracking-wider">Portal Type</th>
+<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant uppercase tracking-wider">Usage Count</th>
+<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant uppercase tracking-wider">Last Used</th>
+<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Table Row 1 -->
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="px-6 py-4">
+<div>
+<p class="text-label-md font-label-md text-on-surface">admin.tls@visapro.ma</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Regional Access #01</p>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-on-primary-fixed-variant bg-primary-fixed px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                    TLScontact
+                                </span>
+</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface">1,248</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface-variant">2 mins ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">edit</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-on-surface-variant hover:text-error material-symbols-outlined text-[20px]">delete</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="px-6 py-4">
+<div>
+<p class="text-label-md font-label-md text-on-surface">casablanca.bls@visapro.ma</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Spain Visa Operations</p>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-[#005236] bg-[#6ffbbe]/30 px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-[#006c49]"></span>
+                                    BLS Intl
+                                </span>
+</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface">856</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface-variant">1 hour ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">edit</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-on-surface-variant hover:text-error material-symbols-outlined text-[20px]">delete</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 (Locked State) -->
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="px-6 py-4">
+<div>
+<p class="text-label-md font-label-md text-on-surface">fr-portal.bk@visapro.ma</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">France Visas Backup</p>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-[#2f2ebe] bg-[#e1e0ff] px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-[#07006c]"></span>
+                                    France-Visas
+                                </span>
+</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface">32</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface-variant">14 days ago</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error/10 text-error text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                                    Locked
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">edit</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-on-surface-variant hover:text-error material-symbols-outlined text-[20px]">delete</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-[#F1F5F9] transition-colors group">
+<td class="px-6 py-4">
+<div>
+<p class="text-label-md font-label-md text-on-surface">tls.rabat.main@visapro.ma</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Rabat Branch Primary</p>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-on-primary-fixed-variant bg-primary-fixed px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                    TLScontact
+                                </span>
+</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface">2,410</td>
+<td class="px-6 py-4 text-tabular-nums font-tabular-nums text-on-surface-variant">Just now</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">edit</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-on-surface-variant hover:text-error material-symbols-outlined text-[20px]">delete</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="px-6 py-4 bg-[#F8FAFC] border-t border-outline-variant flex justify-between items-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Showing 4 of 42 accounts</p>
+<div class="flex gap-2">
+<button class="p-1 border border-outline-variant rounded hover:bg-white text-on-surface-variant transition-all material-symbols-outlined text-[20px]">chevron_left</button>
+<button class="p-1 border border-outline-variant rounded hover:bg-white text-on-surface-variant transition-all material-symbols-outlined text-[20px]">chevron_right</button>
+</div>
+</div>
+</div>
+<!-- Security Audit Log (Asymmetric Side Section) -->
+<div class="mt-gutter grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<div class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h3 class="font-h3 text-h3 text-on-surface mb-4">Security Insights</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">policy</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface">IP Whitelisting Active</p>
+<p class="text-body-md font-body-md text-on-surface-variant">All portal logins are restricted to the Casablanca HQ and Rabat Branch IP ranges. Any external attempt will trigger a lockdown.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Automated Credential Rotation</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Next scheduled rotation in 12 days. This will update 14 France-Visas passwords across all regional terminals.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-fixed-variant rounded-xl p-6 flex flex-col justify-between vault-gradient">
+<div>
+<div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-[28px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="text-h3 font-h3 text-white">Vault Health</h3>
+<p class="text-body-md font-body-md text-white/70 mt-2">Your credential vault is currently protected by RSA-4096 encryption. All logs are being recorded.</p>
+</div>
+<div class="mt-8">
+<div class="flex justify-between text-label-sm font-label-sm text-white/60 mb-2">
+<span>System Integrity</span>
+<span>98%</span>
+</div>
+<div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[98%]"></div>
+</div>
+<button class="mt-6 w-full border border-white/20 text-white py-2.5 rounded-lg font-label-md text-label-md hover:bg-white/5 transition-all">
+                            Run Security Audit
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Mockup (Hidden by default, but styled here) -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+<div class="px-gutter py-6 bg-[#F8FAFC] border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-h2 text-h2 text-on-surface">New Account Credentials</h3>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">close</button>
+</div>
+<div class="p-gutter space-y-stack_lg">
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Account Label</label>
+<input class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md" placeholder="e.g., Casablanca Branch Master" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Portal Type</label>
+<select class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md">
+<option>TLScontact</option>
+<option>BLS International</option>
+<option>France-Visas</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Region</label>
+<select class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md">
+<option>Morocco (All)</option>
+<option>Casablanca</option>
+<option>Rabat</option>
+<option>Tangier</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Portal Username / Email</label>
+<input class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md" placeholder="email@portal-access.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Portal Password</label>
+<div class="relative">
+<input class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md" type="password" value="secretpassword"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant cursor-pointer">visibility</span>
+</div>
+</div>
+<div class="pt-4 flex gap-4">
+<button class="flex-1 border border-outline-variant text-on-surface py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-all">Cancel</button>
+<button class="flex-1 bg-secondary text-white py-3 rounded-lg font-label-md text-label-md hover:bg-[#005236] transition-all">Securely Store</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

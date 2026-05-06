@@ -1,0 +1,57 @@
+// seed.ts
+import { PrismaClient, UserRole, BookingStatus, SessionOutcome } from '@prisma/client';
+const prisma = new PrismaClient();
+
+async function main() {
+  // 1. Create Admin
+  await prisma.user.upsert({
+    where: { email: 'admin@visapro.ma' },
+    update: {},
+    create: {
+      email: 'admin@visapro.ma',
+      fullName: 'Chief Administrator',
+      password: 'hashed_password_here', // In production, use bcrypt
+      role: UserRole.ADMIN,
+    },
+  });
+
+  // 2. Create Sample Clients
+  const client1 = await prisma.client.create({
+    data: {
+      firstName: 'Ahmed',
+      lastName: 'Mansouri',
+      passportNumber: 'MA1234567',
+      nationality: 'Moroccan',
+      phone: '+212661234567',
+    },
+  });
+
+  // 3. Create Portal Accounts
+  const account1 = await prisma.portal_account.create({
+    data: {
+      email: 'casablanca.tls@agency.com',
+      password: 'encrypted_blob_here',
+      portalType: 'TLScontact',
+      status: 'ACTIVE',
+    },
+  });
+
+  // 4. Create Booking Request
+  await prisma.booking_request.create({
+    data: {
+      clientId: client1.id,
+      accountId: account1.id,
+      status: BookingStatus.PENDING,
+      notes: 'Urgent Schengen business visa',
+    },
+  });
+
+  console.log('Seed data generated successfully.');
+}
+
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+}).finally(async () => {
+  await prisma.$disconnect();
+});

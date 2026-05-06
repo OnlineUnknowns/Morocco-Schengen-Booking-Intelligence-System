@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VisaPro Morocco - Session Launcher</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6cf8bb",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-variant": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#565e74",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed": "#07006c",
+                    "on-primary-fixed": "#131b2e",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "on-primary-container": "#7c839b",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-container": "#07006c",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "outline-variant": "#c6c6cd",
+                    "on-surface": "#0b1c30",
+                    "outline": "#76777d",
+                    "surface-container": "#e5eeff",
+                    "surface-bright": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#dae2fd",
+                    "inverse-primary": "#bec6e0",
+                    "on-tertiary-container": "#7073ff",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container-high": "#dce9ff",
+                    "secondary": "#006c49",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "tertiary-fixed": "#e1e0ff",
+                    "primary": "#000000",
+                    "inverse-surface": "#213145",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#131b2e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar_width": "260px",
+                    "stack_md": "16px",
+                    "gutter": "24px",
+                    "margin_page": "32px",
+                    "stack_sm": "8px",
+                    "container_max_width": "1440px",
+                    "stack_lg": "24px"
+            },
+            "fontFamily": {
+                    "tabular-nums": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "tabular-nums": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="w-[260px] h-screen sticky left-0 top-0 bg-primary-container flex flex-col py-gutter px-4 z-50 overflow-y-auto">
+<div class="mb-10 px-2">
+<h1 class="font-h2 text-h2 font-bold text-on-primary-fixed">VisaPro Morocco</h1>
+<p class="text-on-primary-container/70 font-label-sm text-label-sm uppercase tracking-wider">Admin Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-fixed bg-surface-container-highest rounded-lg font-bold font-label-md text-label-md active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Bookings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                Clients
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">manage_accounts</span>
+                Accounts
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto border-t border-on-primary-container/10 pt-4 space-y-1">
+<button class="w-full bg-secondary text-on-secondary py-3 rounded-lg font-bold mb-4 active:scale-95 transition-transform">
+                New Booking
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Shell -->
+<header class="h-16 w-full sticky top-0 z-40 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between px-margin_page">
+<div class="flex items-center gap-8 flex-1">
+<span class="font-h3 text-h3 font-bold text-on-surface">Visa Management System</span>
+<div class="relative w-96 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-body-md focus:ring-2 focus:ring-primary/20" placeholder="Search sessions, clients, or IDs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 pr-4 border-r border-outline-variant">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-all text-on-surface-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="flex items-center gap-3 ml-2">
+<div class="text-right">
+<p class="text-label-md font-bold text-on-surface leading-none">Admin Profile</p>
+<p class="text-label-sm text-outline leading-none mt-1">Super Admin</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a middle-aged male administrator wearing a charcoal suit and a crisp white shirt, captured in a brightly lit, modern office environment. The lighting is soft and flattering, emphasizing a clean corporate aesthetic. The background is slightly blurred, showing hints of glass partitions and minimalist furniture that align with the high-end light mode UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHayMpOHgnSfIeKD11lEEebk1Umb7SJyH139t7k6Pe2C0-uWmKXH5TgcyYl9fbi5R1Byg98l9lryXfJP7znOf02nWyhImEhZpLRqxUkZ-lu4W2YlKuEc5MTQs8Zucxhu7qXcZFCkFsIApNRkJ9s5M1hEICS1CZeHuDvhZnNV0qy-5QChBJccW0Se1JEC1ALCWacK5ygz7bcLCMGlZqzQUE_YqMjTAt5NIMIHaR85IMH2cCWD40x_xz0uZhEArytUbpqh21zBXaHAI"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin_page space-y-gutter overflow-y-auto">
+<header>
+<h2 class="font-h1 text-h1 text-on-surface">Session Launcher &amp; Tracking</h2>
+<p class="text-on-surface-variant mt-2 font-body-lg">Initiate portal logins and maintain real-time manual logs for active visa applications.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Session Launcher Card (Col 4) -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-gutter shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+<h3 class="font-h3 text-h3 text-on-surface">Quick Launch</h3>
+</div>
+<form class="space-y-stack_md">
+<div>
+<label class="block text-label-sm font-bold text-outline uppercase mb-2">Select Client</label>
+<select class="w-full border-outline-variant rounded-lg py-3 px-4 text-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container">
+<option>Select a registered client...</option>
+<option>Amine El Mansouri - #VZ-9021</option>
+<option>Sarah Benjelloun - #VZ-4482</option>
+<option>Karim Haddad - #VZ-1109</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-bold text-outline uppercase mb-2">Portal Account</label>
+<select class="w-full border-outline-variant rounded-lg py-3 px-4 text-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container">
+<option>Select agent account...</option>
+<option>Agent_Alpha_MOR (TLScontact)</option>
+<option>Agent_Beta_MOR (VFS Global)</option>
+<option>BLS_Central_01 (Spain Portal)</option>
+</select>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary-container text-on-primary-fixed py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all" type="submit">
+<span class="material-symbols-outlined">open_in_new</span>
+                                    Launch Portal Session
+                                </button>
+<p class="text-center text-label-sm text-outline mt-3">This will open the portal in a new secure tab.</p>
+</div>
+</form>
+</section>
+<!-- Status Summary -->
+<section class="bg-primary-container text-on-primary-fixed rounded-xl p-gutter overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="text-label-sm font-bold opacity-60 uppercase mb-4">Live Performance</h4>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-h2 font-bold">14</p>
+<p class="text-label-sm opacity-80">Active Sessions</p>
+</div>
+<div>
+<p class="text-h2 font-bold">82%</p>
+<p class="text-label-sm opacity-80">Success Rate</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+</section>
+</div>
+<!-- Active Sessions List (Col 8) -->
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="px-gutter py-4 bg-surface-container-low border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-tight">Active &amp; Recent Sessions</h3>
+<div class="flex gap-2">
+<span class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full animate-pulse"></span>
+                                    3 Live
+                                </span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase">
+<tr>
+<th class="px-6 py-4 font-semibold">Session ID</th>
+<th class="px-6 py-4 font-semibold">Client / Account</th>
+<th class="px-6 py-4 font-semibold">Started</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold">Last Activity</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1: Active -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-6 py-5 font-tabular-nums text-primary font-bold">#SN-8821</td>
+<td class="px-6 py-5">
+<p class="font-bold text-on-surface">Amine El Mansouri</p>
+<p class="text-label-sm text-outline">TLScontact - Casablanca</p>
+</td>
+<td class="px-6 py-5 text-label-md">14:22:05</td>
+<td class="px-6 py-5">
+<span class="bg-secondary-container/20 text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold">Running</span>
+</td>
+<td class="px-6 py-5 text-label-sm text-outline">2 mins ago</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-primary hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Active -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer bg-surface-container-low/20">
+<td class="px-6 py-5 font-tabular-nums text-primary font-bold">#SN-8820</td>
+<td class="px-6 py-5">
+<p class="font-bold text-on-surface">Sarah Benjelloun</p>
+<p class="text-label-sm text-outline">VFS Global - Rabat</p>
+</td>
+<td class="px-6 py-5 text-label-md">14:15:30</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-highest text-on-primary-container px-3 py-1 rounded-full text-label-sm font-bold">Awaiting Input</span>
+</td>
+<td class="px-6 py-5 text-label-sm text-outline">12 mins ago</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-primary hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Recently Closed -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer opacity-80">
+<td class="px-6 py-5 font-tabular-nums text-outline">#SN-8815</td>
+<td class="px-6 py-5">
+<p class="font-bold text-on-surface">Karim Haddad</p>
+<p class="text-label-sm text-outline">BLS Spain - Tangier</p>
+</td>
+<td class="px-6 py-5 text-label-md">13:00:00</td>
+<td class="px-6 py-5">
+<span class="bg-error-container/20 text-on-error-container px-3 py-1 rounded-full text-label-sm font-bold">Terminated</span>
+</td>
+<td class="px-6 py-5 text-label-sm text-outline">1h ago</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 text-primary hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Focused Activity Tracking & Log Outcome (Asymmetric Module) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Timeline View -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-gutter">
+<h3 class="font-label-md text-label-md text-on-surface uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                                Current Session Timeline
+                            </h3>
+<div class="space-y-6 relative before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant">
+<div class="relative pl-8">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<p class="text-label-md font-bold">Session Initialized</p>
+<p class="text-body-md text-on-surface-variant">Portal reached: TLScontact Casablanca.</p>
+<span class="text-label-sm text-outline">14:22:05</span>
+</div>
+<div class="relative pl-8">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<p class="text-label-md font-bold">Authentication Successful</p>
+<p class="text-body-md text-on-surface-variant">Credentials accepted. Dashboard loaded.</p>
+<span class="text-label-sm text-outline">14:23:12</span>
+</div>
+<div class="relative pl-8">
+<span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center ring-2 ring-primary">
+<span class="material-symbols-outlined text-[14px]">search</span>
+</span>
+<p class="text-label-md font-bold">Slot Scanning</p>
+<p class="text-body-md text-on-surface-variant">Agent currently checking calendar availability...</p>
+<span class="text-label-sm text-outline">Active Now</span>
+</div>
+</div>
+</section>
+<!-- Outcome Logger -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-gutter">
+<h3 class="font-label-md text-label-md text-on-surface uppercase mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+                                Log Manual Outcome
+                            </h3>
+<form class="space-y-4">
+<div>
+<label class="block text-label-sm font-bold text-outline uppercase mb-2">Outcome Type</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="border border-outline-variant rounded-lg p-2 text-center text-label-sm hover:border-secondary hover:bg-secondary-container/10 transition-all font-bold" type="button">Success</button>
+<button class="border border-outline-variant rounded-lg p-2 text-center text-label-sm hover:border-error hover:bg-error-container/10 transition-all font-bold" type="button">No Slots</button>
+<button class="border border-outline-variant rounded-lg p-2 text-center text-label-sm hover:border-primary hover:bg-surface-container-high transition-all font-bold" type="button">Maintenance</button>
+<button class="border border-outline-variant rounded-lg p-2 text-center text-label-sm hover:border-primary hover:bg-surface-container-high transition-all font-bold" type="button">Blocked</button>
+</div>
+</div>
+<div>
+<label class="block text-label-sm font-bold text-outline uppercase mb-2">Internal Note</label>
+<textarea class="w-full border-outline-variant rounded-lg py-3 px-4 text-body-md h-24 focus:border-primary-container focus:ring-1 focus:ring-primary-container resize-none" placeholder="Specify what happened in detail..."></textarea>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-3 rounded-lg font-bold hover:opacity-90 active:scale-[0.98] transition-all" type="submit">
+                                    Update Session Log
+                                </button>
+</form>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer Stats / Details Section -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter pt-8 border-t border-outline-variant">
+<div class="bg-white border border-outline-variant rounded-xl p-6">
+<p class="text-label-sm text-outline font-bold uppercase mb-2">Avg Session Duration</p>
+<p class="text-h3 font-tabular-nums text-on-surface">18m 42s</p>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-6">
+<p class="text-label-sm text-outline font-bold uppercase mb-2">Logs Today</p>
+<p class="text-h3 font-tabular-nums text-on-surface">142</p>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-6">
+<p class="text-label-sm text-outline font-bold uppercase mb-2">Blocked Accounts</p>
+<p class="text-h3 font-tabular-nums text-error">0</p>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-6">
+<p class="text-label-sm text-outline font-bold uppercase mb-2">Terminal Load</p>
+<p class="text-h3 font-tabular-nums text-secondary">Optimal</p>
+</div>
+</section>
+</div>
+</main>
+</body></html>

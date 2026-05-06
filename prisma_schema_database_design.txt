@@ -1,0 +1,121 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  AGENT
+}
+
+enum BookingStatus {
+  PENDING
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+}
+
+enum SessionOutcome {
+  SUCCESS
+  NO_SLOTS
+  MAINTENANCE
+  BLOCKED
+  OTHER
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  password      String
+  fullName      String
+  role          UserRole  @default(AGENT)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  auditLogs     AuditLog[]
+}
+
+model Client {
+  id              String           @id @default(uuid())
+  firstName       String
+  lastName        String
+  passportNumber  String           @unique
+  nationality     String
+  email           String?
+  phone           String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  bookingRequests BookingRequest[]
+}
+
+model PortalAccount {
+  id              String           @id @default(uuid())
+  email           String           @unique
+  password        String           // Encrypted
+  portalType      String           // e.g., "TLS", "BLS"
+  status          String           @default("ACTIVE")
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  sessions        Session[]
+  bookingRequests BookingRequest[]
+}
+
+model BookingRequest {
+  id              String        @id @default(uuid())
+  clientId        String
+  client          Client        @relation(fields: [clientId], references: [id])
+  accountId       String?
+  account         PortalAccount? @relation(fields: [accountId], references: [id])
+  status          BookingStatus @default(PENDING)
+  notes           String?       @db.Text
+  scheduledAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  sessions        Session[]
+}
+
+model Session {
+  id               String          @id @default(uuid())
+  userId           String
+  user             User            @relation(fields: [userId], references: [id])
+  bookingRequestId String
+  bookingRequest   BookingRequest  @relation(fields: [bookingRequestId], references: [id])
+  accountId        String
+  account          PortalAccount   @relation(fields: [accountId], references: [id])
+  startTime        DateTime        @default(now())
+  endTime          DateTime?
+  outcome          SessionOutcome?
+  notes            String?         @db.Text
+  createdAt        DateTime        @default(now())
+}
+
+model Transaction {
+  id            String   @id @default(uuid())
+  clientRef     String
+  amount        Decimal  @db.Decimal(10, 2)
+  currency      String   @default("MAD")
+  status        String   @default("PAID") // PAID, PENDING, REFUNDED
+  method        String   // Credit Card, Cash, Bank Transfer
+  date          DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  entity    String
+  entityId  String
+  metadata  Json?
+  timestamp DateTime @default(now())
+
+  @@index([userId])
+  @@index([entity, entityId])
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VisaPro Morocco - Agency Admin Terminal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#6cf8bb",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-variant": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "surface-tint": "#565e74",
+                        "on-surface-variant": "#45464d",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-low": "#eff4ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-fixed": "#07006c",
+                        "on-primary-fixed": "#131b2e",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "on-primary-container": "#7c839b",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-container": "#07006c",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "outline-variant": "#c6c6cd",
+                        "on-surface": "#0b1c30",
+                        "outline": "#76777d",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#000000",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-primary": "#bec6e0",
+                        "on-tertiary-container": "#7073ff",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-high": "#dce9ff",
+                        "secondary": "#006c49",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed": "#e1e0ff",
+                        "primary": "#000000",
+                        "inverse-surface": "#213145",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#131b2e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar_width": "260px",
+                        "stack_md": "16px",
+                        "gutter": "24px",
+                        "margin_page": "32px",
+                        "stack_sm": "8px",
+                        "container_max_width": "1440px",
+                        "stack_lg": "24px"
+                    },
+                    "fontFamily": {
+                        "tabular-nums": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "h1": ["Inter"],
+                        "h3": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tabular-nums": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface">
+<!-- SideNavBar -->
+<aside class="w-[260px] h-screen sticky left-0 top-0 bg-primary-container flex flex-col py-gutter px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="font-h2 text-h2 font-bold text-on-primary-fixed">VisaPro Morocco</h1>
+<p class="font-label-sm text-label-sm text-on-primary-container opacity-80">Admin Terminal</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 text-on-primary-fixed bg-surface-container-highest rounded-lg font-bold transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-label-md text-label-md">Accounts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-primary-container/70 hover:text-on-primary-fixed hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 border-t border-on-primary-container/20 pt-6">
+<button class="w-full mb-4 py-3 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>New Booking</span>
+</button>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:text-on-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:text-on-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-grow flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="h-16 w-full sticky top-0 z-40 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between px-margin_page">
+<div class="flex items-center gap-6 flex-grow">
+<span class="font-h3 text-h3 font-bold text-on-surface whitespace-nowrap">Visa Management System</span>
+<div class="relative max-w-md w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-body-md focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search applications, clients, or tags..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md text-on-surface leading-none">Admin User</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Global Overseer</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a corporate administrator in a modern office setting. The lighting is soft and high-key, reflecting a light-mode UI aesthetic. The background is a blurred, high-end administrative office with clean architectural lines and subtle sapphire accents. The overall mood is authoritative and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEDiXvlZN2JNob-4yd3F7yhyP2uvFS8c2ruIDRUfEfDd3MS6j9kwPpnk81jdbfCWxBq8QzTcr2JSBXbLBOrFoBwloLSnFkRrtK43uERK01L7RHsbL6MAYNLb1Gsx9I-pLWbl7J2IsyLWwLF1K8DqSLjxB4RVDBpUWeQSJA3qbPzxgzi4cBV6NzyrphnY0SxShaiZGUw4iHQ9jzW3SFfgi4dhJv_dFulxMPrwfOKFVHY2Fc44op2RXtOh9t0LLdY6Z5m25q8LD_XXg"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-margin_page space-y-gutter max-w-container_max_width mx-auto w-full">
+<!-- KPI Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack_lg">
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Bookings</p>
+<h2 class="font-h1 text-h1 mt-1">1,284</h2>
+</div>
+<div class="p-3 bg-primary-fixed rounded-xl text-on-primary-fixed">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">+12% from last month</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Clients Today</p>
+<h2 class="font-h1 text-h1 mt-1">42</h2>
+</div>
+<div class="p-3 bg-secondary-fixed rounded-xl text-on-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm">8 are new registrants</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Successful Sessions</p>
+<h2 class="font-h1 text-h1 mt-1">94%</h2>
+</div>
+<div class="p-3 bg-surface-container-highest rounded-xl text-primary">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="keyboard_double_arrow_up">keyboard_double_arrow_up</span>
+<span class="font-label-sm text-label-sm">Above agency average</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Daily Revenue</p>
+<h2 class="font-h1 text-h1 mt-1">MAD 18k</h2>
+</div>
+<div class="p-3 bg-tertiary-fixed rounded-xl text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_down">trending_down</span>
+<span class="font-label-sm text-label-sm">-4% vs yesterday</span>
+</div>
+</div>
+</section>
+<!-- Main Content Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack_lg">
+<!-- Daily Session Chart & Statistics -->
+<section class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-lg p-6">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Daily Session Overview</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time outcome tracking for biometric appointments.</p>
+</div>
+<div class="flex items-center gap-2">
+<select class="bg-surface-container-low border-none rounded-lg font-label-sm text-label-sm py-1 px-3 focus:ring-0">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+</select>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-body-md" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<div class="h-[300px] w-full relative">
+<!-- Abstract Visual representation of a chart using divs -->
+<div class="absolute inset-0 flex items-end justify-between px-4 pb-8 border-b border-outline-variant">
+<div class="w-12 bg-primary rounded-t-lg transition-all hover:bg-primary/80" style="height: 60%"></div>
+<div class="w-12 bg-primary/20 rounded-t-lg transition-all" style="height: 45%"></div>
+<div class="w-12 bg-primary rounded-t-lg transition-all" style="height: 85%"></div>
+<div class="w-12 bg-secondary rounded-t-lg transition-all" style="height: 70%"></div>
+<div class="w-12 bg-primary rounded-t-lg transition-all" style="height: 55%"></div>
+<div class="w-12 bg-primary rounded-t-lg transition-all" style="height: 90%"></div>
+<div class="w-12 bg-primary/20 rounded-t-lg transition-all" style="height: 30%"></div>
+<div class="w-12 bg-secondary rounded-t-lg transition-all" style="height: 65%"></div>
+</div>
+<!-- X-Axis Labels -->
+<div class="absolute bottom-0 w-full flex justify-between px-2 text-[10px] font-medium text-outline uppercase tracking-tighter">
+<span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div>
+<p class="text-[12px] text-on-surface-variant leading-none">Completed</p>
+<p class="font-label-md text-label-md">324 Units</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div>
+<p class="text-[12px] text-on-surface-variant leading-none">Successful</p>
+<p class="font-label-md text-label-md">298 Units</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary/20"></div>
+<div>
+<p class="text-[12px] text-on-surface-variant leading-none">Rescheduled</p>
+<p class="font-label-md text-label-md">26 Units</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity Feed -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-h3 text-h3 text-on-surface">Recent Activity</h3>
+<a class="text-label-sm text-primary font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary/10 border-2 border-secondary flex items-center justify-center z-10 bg-white">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="check" data-weight="fill">check</span>
+</div>
+<p class="font-label-md text-label-md">Visa Approved: Ahmed El Amrani</p>
+<p class="text-label-sm text-on-surface-variant">Schengen Short-Stay (Business) • Just now</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest border-2 border-primary flex items-center justify-center z-10 bg-white">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="description" data-weight="fill">description</span>
+</div>
+<p class="font-label-md text-label-md">New Document Uploaded</p>
+<p class="text-label-sm text-on-surface-variant">Laila Mansouri • 14 mins ago</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-error/10 border-2 border-error flex items-center justify-center z-10 bg-white">
+<span class="material-symbols-outlined text-[14px] text-error" data-icon="close" data-weight="fill">close</span>
+</div>
+<p class="font-label-md text-label-md">Payment Failed: ID #8829</p>
+<p class="text-label-sm text-on-surface-variant">Transaction rejected by bank • 2 hours ago</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest border-2 border-primary flex items-center justify-center z-10 bg-white">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="schedule" data-weight="fill">schedule</span>
+</div>
+<p class="font-label-md text-label-md">Appointment Rescheduled</p>
+<p class="text-label-sm text-on-surface-variant">Youssef Tazi (Casablanca Hub) • 5 hours ago</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary/10 border-2 border-secondary flex items-center justify-center z-10 bg-white">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="send" data-weight="fill">send</span>
+</div>
+<p class="font-label-md text-label-md">Passport Dispatched</p>
+<p class="text-label-sm text-on-surface-variant">Meryem Sabiri • Yesterday at 16:45</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Section: Appointments Table -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden">
+<div class="px-6 py-5 border-b border-outline-variant flex items-center justify-between bg-surface-bright">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Upcoming Appointments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Next 5 scheduled visa processing sessions.</p>
+</div>
+<button class="px-4 py-2 border border-primary text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-all">
+                        Manage All Schedule
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-[#F8FAFC]">
+<tr>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Client Name</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Visa Type</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Date &amp; Time</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Center</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Status</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-[#F1F5F9] transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<img alt="Khalid El" class="w-8 h-8 rounded-full" data-alt="A detailed digital avatar representation of a Moroccan professional male in a white shirt, with soft daylight coming from the side. The image is clean and integrated into a professional SaaS dashboard environment with sharp focus and high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdTYQuk-fuS1MNiX0ib7crW3uYiKEehiqMWVuJwCOCQD_UH6xoWKm4WhuuGp33Au3U7mzTmKQEvo_82s2eJrPxBfStUT8HWYHMqRWiQFvakBGHDJx-mngSmHCF5a0s4PpFQ0TBJ_s0wJ1RR1aM-1rauB5lS_J-6OgCL9R0gl-nCB8jqnialIGoZMCiUdkGrUh1wflCY0-oZ4bsCoYa9aj2m-Q_huxx4Sbnl2w31J7Re8-CXIYeIL5XPlsho5XMzAy8khJXtp853zM"/>
+<span class="font-label-md text-label-md text-on-surface">Khalid El Fassi</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Spain Schengen</td>
+<td class="px-6 py-4 font-tabular-nums text-tabular-nums text-on-surface font-semibold">Today, 14:30</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Casablanca BLS</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-[#E1F5FE] text-[#01579B] font-label-sm text-label-sm">Confirmed</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-primary-container"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#F1F5F9] transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<img alt="Sanae B" class="w-8 h-8 rounded-full" data-alt="A detailed digital avatar representation of a professional female wearing a modern hijab in a corporate setting. High-resolution lighting, modern minimalist aesthetic consistent with a financial dashboard. Clean white backgrounds and sharp facial features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcUR8U8A6Q38YjL1iBWoOa_kD71rDzglfiLLG7IMSFKVrekFL4ItKzy7Vye1czVLmcVrkGMbqq84hR-te1R3MFS77Ln1qiAZKIdZTWnYWn3eE8zwOpZMaSNfsWyDViV63Nv02Z1JV0m81PVvBFOz9eiB3180GCnGjqvbBDCzSAV6Fu2l9onmcdKIjSNsZTIA0sE_gY11CcKcLr1Ws7tCwOZzPVEj4ZGIZuly_IWlBXE5a1OyBIwgOsK9sCG8g_R7GZMGDbJvIx098"/>
+<span class="font-label-md text-label-md text-on-surface">Sanae Bennani</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">France Student</td>
+<td class="px-6 py-4 font-tabular-nums text-tabular-nums text-on-surface font-semibold">Today, 15:15</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Rabat TLS</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-[#F1F8E9] text-[#33691E] font-label-sm text-label-sm">In Queue</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-primary-container"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#F1F5F9] transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<img alt="Omar T" class="w-8 h-8 rounded-full" data-alt="Professional profile headshot of an executive male, crisp lighting, high definition, modern office backdrop, neutral colors with a professional sapphire corporate theme. Minimalist digital photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCan8TMo9he5szIwQyftgDlpzFaWRt4h1Oz2MjuAgUvC3cD9NUhf_fbXbQKgBrAIo7nUF6HP_8_tEn8ZfL3GGpub5aLTobrEvDdQtzi7_asC14XB3H49uiNsIwyIGFk5ESwCOCoCaa97J0IyhGFbC_tLAlYy2hAD2O3yiNmq9jtIMv_rAh2mFpVdMHaPbzpAKfn1L1xLMpj_3y6KRFRkHpyS-UT-FPr67ISTG4Ib_Pi4gF7ciXU0qs3CG5mzQ0Tegq6f-wRT5hHixg"/>
+<span class="font-label-md text-label-md text-on-surface">Omar Tazi</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">UK Standard Visitor</td>
+<td class="px-6 py-4 font-tabular-nums text-tabular-nums text-on-surface font-semibold">Tomorrow, 09:00</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Casablanca VFS</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-[#E1F5FE] text-[#01579B] font-label-sm text-label-sm">Confirmed</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-primary-container"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#F1F5F9] transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<img alt="Zineb L" class="w-8 h-8 rounded-full" data-alt="A portrait of a smiling female administrative professional in a high-end travel agency office. Bright lighting, modern furniture, clean composition, and a palette of whites, light grays, and deep navy. High detail and realistic textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARDCZIUO72-8lQaOUhMeAqgxlKxDnZqMkAcvAVzKc3ainQlbo0CmpybNah9fd7YvpFYQTHsttdLdM_rkV3nYEQK5-paSxPpUxz0ekUJWCmYhwpYNoJ-DEqpjD6dsaHGJYmQnvLck07sm5M2pkx99h_ZMDq6qrFyhwpqUeXdnDUZuYvaaSKobimYmkFBJrfBiZ8BPCKsDMdJIb3R1WamhOVd6Q4DDEryz-VjB3bOMSvPcQQGkFXHEj1CGzWLgxJaKjLjxEqIWhDFlI"/>
+<span class="font-label-md text-label-md text-on-surface">Zineb Lahlou</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">US B1/B2</td>
+<td class="px-6 py-4 font-tabular-nums text-tabular-nums text-on-surface font-semibold">Tomorrow, 11:30</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Casablanca Consulate</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-[#FFF8E1] text-[#FF8F00] font-label-sm text-label-sm">Pending Doc</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-primary-container"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#F1F5F9] transition-colors">
+<td class="px-6 py-4 flex items-center gap-3">
+<img alt="Hamza M" class="w-8 h-8 rounded-full" data-alt="Close up professional portrait of a young man with a slight beard in a bright, modern architectural space. Neutral lighting, clean white walls, minimalist design system aesthetic. Realistic, 8k resolution, cinematic quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHIZQ_6xFT2Yx6nZocDdA4DB1RoZst1WiGGA3sXEWNIZ0xMDxjhLTSXnMxh-86nKYw1sPVUnkeI5M7QJL4Mvjd0cmBoa8r-8vr2s5Ce361i7v84uD2AzBwISn_pZgA4wy8JdP0PzMpZwW6kM21XRC1Tp4CIjaGPSnErIuU0y_gY-RRgs5oTO8D08T9K5CV9WJcvt8X6wkaTdxg-3COBUsk-X7D15kILkjAe0dMyQOiwJX3uQ8hQcdC4VGmX9VZSC3Jw9HrJeACqgo"/>
+<span class="font-label-md text-label-md text-on-surface">Hamza Mouline</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Italy Tourism</td>
+<td class="px-6 py-4 font-tabular-nums text-tabular-nums text-on-surface font-semibold">Oct 14, 10:00</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface">Tangier VFS</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-[#E1F5FE] text-[#01579B] font-label-sm text-label-sm">Confirmed</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-primary-container"><span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+</body></html>

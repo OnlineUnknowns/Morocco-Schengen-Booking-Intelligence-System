@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6cf8bb",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-variant": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#565e74",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed": "#07006c",
+                    "on-primary-fixed": "#131b2e",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "on-primary-container": "#7c839b",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-container": "#07006c",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "outline-variant": "#c6c6cd",
+                    "on-surface": "#0b1c30",
+                    "outline": "#76777d",
+                    "surface-container": "#e5eeff",
+                    "surface-bright": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#dae2fd",
+                    "inverse-primary": "#bec6e0",
+                    "on-tertiary-container": "#7073ff",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container-high": "#dce9ff",
+                    "secondary": "#006c49",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "tertiary-fixed": "#e1e0ff",
+                    "primary": "#000000",
+                    "inverse-surface": "#213145",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#131b2e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar_width": "260px",
+                    "stack_md": "16px",
+                    "gutter": "24px",
+                    "margin_page": "32px",
+                    "stack_sm": "8px",
+                    "container_max_width": "1440px",
+                    "stack_lg": "24px"
+            },
+            "fontFamily": {
+                    "tabular-nums": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "tabular-nums": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background flex min-h-screen">
+<!-- SideNavBar Anchor -->
+<aside class="w-[260px] h-screen sticky left-0 top-0 bg-primary-container flex flex-col py-6 px-4 shrink-0 overflow-y-auto">
+<div class="mb-8 px-2">
+<h1 class="font-h2 text-h2 font-bold text-on-primary-fixed">VisaPro Morocco</h1>
+<p class="text-label-sm text-on-primary-container opacity-80">Admin Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Bookings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-fixed bg-surface-container-highest rounded-lg font-bold font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                Clients
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">manage_accounts</span>
+                Accounts
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto pt-6 space-y-4">
+<button class="w-full bg-secondary text-on-secondary py-3 px-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Booking
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:bg-surface-container-high transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                    Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Anchor -->
+<header class="h-16 w-full sticky top-0 z-40 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between px-margin_page">
+<div class="flex items-center gap-6">
+<h2 class="font-h3 text-h3 font-bold text-on-surface">Visa Management System</h2>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-body-md w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Global search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-label-md text-on-surface">Admin User</p>
+<p class="text-label-sm text-on-surface-variant">Administrator</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a corporate administrator with a confident expression, wearing a tailored navy suit and crisp white shirt. The background is a blurred high-end office setting with soft, warm morning light and clean glass partitions. The image reflects institutional reliability and administrative precision with a modern light-mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsPOc85uL_LoObOTjxN-d6ULysxDDz_BA2Sp4WYBtBbBxw_e_n-C4ePNxmsEZZZXNUoWEzOaGegLVwkWZ5Vty_XsGU92nn8jgcgOyBPEcU0xe9FLaSvMc5KeeHIroTERJFpiqERUblyo_ih7v1EfC4x0R8PhWyBE-R-IbTX7_LZ5JkP6Y70rHQEGBga0i7XqHRA-88IO2EL3lLeKSDsa7hPryhz7KzgXW0YR5uMcpvifxiWh290DdzjG4DZkrNH6LAdd32aMirkz4"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin_page max-w-container_max_width mx-auto w-full space-y-gutter">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Client Management</h1>
+<p class="text-body-lg text-on-surface-variant mt-1">Manage and track all visa applicant profiles in one centralized system.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md flex items-center gap-2 hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+                    Add New Client
+                </button>
+</div>
+<!-- Bento Filter Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant flex flex-col md:flex-row items-center gap-4">
+<div class="flex-1 w-full space-y-1">
+<label class="text-label-sm text-on-surface-variant">Search Clients</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-white border border-outline-variant rounded-lg pl-10 pr-4 py-2 focus:border-primary focus:ring-0 transition-all text-body-md" placeholder="Name or Passport Number..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-48 space-y-1">
+<label class="text-label-sm text-on-surface-variant">Date Added</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-2 focus:border-primary focus:ring-0 transition-all text-body-md" type="date"/>
+</div>
+<div class="w-full md:w-auto self-end">
+<button class="w-full bg-surface-container-high text-on-surface px-6 py-2 rounded-lg font-label-md hover:bg-surface-container-highest transition-all">
+                            Apply Filters
+                        </button>
+</div>
+</div>
+<div class="md:col-span-4 bg-primary-container p-6 rounded-xl text-on-primary-fixed flex flex-col justify-between">
+<div>
+<p class="text-label-sm opacity-80">Total Active Clients</p>
+<h2 class="text-h1 font-bold">1,284</h2>
+</div>
+<div class="flex items-center gap-2 text-secondary-fixed-dim text-label-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>12% increase from last month</span>
+</div>
+</div>
+</div>
+<!-- Data Table Module -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface border-b border-outline-variant">
+<th class="px-6 py-4 font-label-md text-label-md">Name</th>
+<th class="px-6 py-4 font-label-md text-label-md">Passport Number</th>
+<th class="px-6 py-4 font-label-md text-label-md">Phone</th>
+<th class="px-6 py-4 font-label-md text-label-md">Email</th>
+<th class="px-6 py-4 font-label-md text-label-md">Nationality</th>
+<th class="px-6 py-4 font-label-md text-label-md">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-sm">
+                                            AM
+                                        </div>
+<span class="text-body-md font-medium text-on-surface">Ahmed Mansouri</span>
+</div>
+</td>
+<td class="px-6 py-4 font-tabular-nums text-body-md text-on-surface-variant">MA1234567</td>
+<td class="px-6 py-4 font-tabular-nums text-body-md text-on-surface-variant">+212 661-234567</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">a.mansouri@email.com</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">Moroccan</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-secondary/10 text-on-secondary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="View Details">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="Edit Client">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors" title="New Booking">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold text-label-sm">
+                                            SY
+                                        </div>
+<span class="text-body-md font-medium text-on-surface">Sarah Young</span>
+</div>
+</td>
+<td class="px-6 py-4 font-tabular-nums text-body-md text-on-surface-variant">US9876543</td>
+<td class="px-6 py-4 font-tabular-nums text-body-md text-on-surface-variant">+1 202-555-0143</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">sarah.y@global.net</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">American</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-error/10 text-on-error-container">
+                                        Inactive
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="View Details">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="Edit Client">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors" title="New Booking">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-sm">
+                                            LC
+                                        </div>
+<span class="text-body-md font-medium text-on-surface">Lucas Chen</span>
+</div>
+</td>
+<td class="px-6 py-4 font-tabular-nums text-body-md text-on-surface-variant">CH4455667</td>
+<td class="px-6 py-4 font-tabular-nums text-body-md text-on-surface-variant">+86 10 6555 1234</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">chen.lucas@asia.com</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">Chinese</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-secondary/10 text-on-secondary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="View Details">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="Edit Client">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors" title="New Booking">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State (Hidden by default, used when no results found) -->
+<div class="hidden flex-col items-center justify-center py-24 text-center px-6">
+<div class="w-20 h-20 bg-surface-container-low rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[40px] text-on-surface-variant">person_search</span>
+</div>
+<h3 class="text-h3 font-bold text-on-surface">No clients found</h3>
+<p class="text-body-md text-on-surface-variant max-w-sm mx-auto mt-2">
+                        We couldn't find any clients matching your search criteria. Try adjusting your filters or add a new client profile.
+                    </p>
+<button class="mt-6 border border-primary text-primary px-6 py-2 rounded-lg font-label-md hover:bg-surface-container-low transition-all">
+                        Clear All Filters
+                    </button>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-between">
+<p class="text-label-sm text-on-surface-variant">Showing 1 to 3 of 1,284 clients</p>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-sm">1</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-sm">2</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-sm">3</button>
+<span class="px-2">...</span>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-label-sm">42</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dashboard Shortcuts Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">document_scanner</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface">Batch Upload</h4>
+<p class="text-body-md text-on-surface-variant mt-2">Upload passport copies to automatically create multiple client profiles using OCR technology.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface">Passport Verification</h4>
+<p class="text-body-md text-on-surface-variant mt-2">Validate passport authenticity against international databases for enhanced security checks.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface">Activity Log</h4>
+<p class="text-body-md text-on-surface-variant mt-2">Track profile modifications and booking history for auditing and administrative compliance.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

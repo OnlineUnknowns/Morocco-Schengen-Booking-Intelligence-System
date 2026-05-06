@@ -1,0 +1,33 @@
+// apps/frontend/lib/api-client.ts
+import axios from 'axios';
+
+const apiClient = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api/v1',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+apiClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default apiClient;
+
+// apps/frontend/features/clients/api.ts
+import apiClient from '@/lib/api-client';
+import { Client } from '@visapro/types';
+
+export const getClients = async (page = 1, search = '') => {
+  const response = await apiClient.get(`/clients?page=${page}&search=${search}`);
+  return response.data;
+};
+
+export const createClient = async (data: Partial<Client>) => {
+  const response = await apiClient.post('/clients', data);
+  return response.data;
+};

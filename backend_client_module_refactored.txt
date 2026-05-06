@@ -1,0 +1,70 @@
+// apps/backend/src/modules/clients/clients.controller.ts
+import { Controller, Get, Post, Body, Patch, Param, Query, UseGuards } from '@nestjs/common';
+import { ClientsService } from './clients.service';
+import { CreateClientDto } from './dto/create-client.dto';
+import { UpdateClientDto } from './dto/update-client.dto';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { RolesGuard } from '../../common/guards/roles.guard';
+import { Roles } from '../../common/decorators/roles.decorator';
+import { UserRole } from '@visapro/types';
+
+@Controller('clients')
+@UseGuards(JwtAuthGuard, RolesGuard)
+export class ClientsController {
+  constructor(private readonly clientsService: ClientsService) {}
+
+  @Post()
+  @Roles(UserRole.ADMIN, UserRole.AGENT)
+  create(@Body() createClientDto: CreateClientDto) {
+    return this.clientsService.create(createClientDto);
+  }
+
+  @Get()
+  findAll(@Query('page') page: number = 1, @Query('search') search?: string) {
+    return this.clientsService.findAll(page, search);
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.clientsService.findOne(id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateClientDto: UpdateClientDto) {
+    return this.clientsService.update(id, updateClientDto);
+  }
+}
+
+// apps/backend/src/modules/clients/clients.service.ts
+import { Injectable, ConflictException } from '@nestjs/common';
+import { ClientsRepository } from './clients.repository';
+import { CreateClientDto } from './dto/create-client.dto';
+
+@Injectable()
+export class ClientsService {
+  constructor(private readonly repository: ClientsRepository) {}
+
+  async create(dto: CreateClientDto) {
+    const existing = await this.repository.findByPassport(dto.passportNumber);
+    if (existing) throw new ConflictException('Passport number already exists');
+    return this.repository.create(dto);
+  }
+
+  async findAll(page: number, search?: string) {
+    return this.repository.findAll({
+      skip: (page - 1) * 10,
+      take: 10,
+      where: search ? {
+        OR: [
+          { firstName: { contains: search } },
+          { lastName: { contains: search } },
+          { passportNumber: { contains: search } }
+        ]
+      } : {}
+    });
+  }
+
+  async findOne(id: string) {
+    return this.repository.findById(id);
+  }
+}
